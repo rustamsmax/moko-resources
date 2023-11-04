@@ -25,7 +25,7 @@ internal class AndroidPluginLogic(
     private val generatedDir: File,
     private val mrSettings: MRGenerator.MRSettings,
     private val features: List<ResourceGeneratorFeature<out MRGenerator.Generator>>,
-    private val project: Project
+    private val project: Project,
 ) {
     fun setup(androidMainSourceSet: AndroidSourceSet) {
         val kotlinSourceSets: List<KotlinSourceSet> = targets

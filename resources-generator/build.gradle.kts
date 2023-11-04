@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version ("1.8.10")
+    id("org.jetbrains.kotlin.jvm") version ("1.9.20")
     id("detekt-convention")
     id("publication-convention")
     id("com.gradle.plugin-publish") version ("1.2.0")
@@ -31,13 +31,13 @@ java {
 }
 
 kotlin {
-    jvmToolchain(11)
+//    jvmToolchain(11)
 }
 
 gradlePlugin {
     plugins {
         create("multiplatform-resources") {
-            id = "dev.icerock.mobile.multiplatform-resources"
+            id = "uz.rsteam.mobile.multiplatform-resources"
             implementationClass = "dev.icerock.gradle.MultiplatformResourcesPlugin"
 
             displayName = "MOKO resources generator plugin"
@@ -46,6 +46,6 @@ gradlePlugin {
         }
     }
 
-    website.set("https://github.com/icerockdev/moko-resources")
-    vcsUrl.set("https://github.com/icerockdev/moko-resources")
+    website.set("https://github.com/rustamsmax/moko-resources")
+    vcsUrl.set("https://github.com/rustamsmax/moko-resources")
 }

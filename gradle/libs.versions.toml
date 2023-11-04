@@ -39,6 +39,8 @@ mokoGraphicsVersion = "0.9.0"
 mokoParcelizeVersion = "0.8.0"
 mokoTestVersion = "0.6.1"
 mokoMultiplatformPluginVersion = "0.14.2"
+moko-resources = "0.23.0"
+
 
 [libraries]
 # kotlinx
@@ -94,3 +96,5 @@ kotlinCompilerEmbeddable = { module = "org.jetbrains.kotlin:kotlin-compiler-embe
 detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detektVersion" }
 mokoMultiplatformPlugin = { module = "dev.icerock:mobile-multiplatform", version.ref = "mokoMultiplatformPluginVersion" }
 composeJetBrainsPlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "composeJetbrainsVersion" }
+
+moko-resources-generator = { group = "dev.icerock.moko", name = "resources-generator", version.ref = "moko-resources" }

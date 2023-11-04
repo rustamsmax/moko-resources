@@ -12,7 +12,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath("dev.icerock.moko:resources-generator")
+        classpath(moko.resourcesGradlePlugin)
         classpath(libs.composeJetBrainsPlugin)
         classpath(":resources-build-logic")
     }
@@ -20,7 +20,7 @@ buildscript {
 
 allprojects {
     plugins.withId("org.gradle.maven-publish") {
-        group = "dev.icerock.moko"
+        group = "uz.rsteam.moko"
         version = moko.versions.resourcesVersion.get()
     }
 }

@@ -113,7 +113,7 @@ class MultiplatformResourcesPlugin : Plugin<Project> {
                 strictLineBreaks = strictLineBreaks,
                 mrSettings = mrSettings
             ),
-            ImagesGenerator.Feature(sourceInfo, mrSettings, target.logger),
+            ImagesGenerator.Feature(sourceInfo, mrSettings, target.logger, mrExtension.convertSvgToAndroidDrawables),
             FontsGenerator.Feature(sourceInfo, mrSettings),
             FilesGenerator.Feature(sourceInfo, mrSettings),
             ColorsGenerator.Feature(sourceInfo, mrSettings),
@@ -138,7 +138,7 @@ class MultiplatformResourcesPlugin : Plugin<Project> {
                     generatedDir = generatedDir,
                     mrSettings = mrSettings,
                     features = features,
-                    sourceInfo = sourceInfo
+                    sourceInfo = sourceInfo,
                 )
             }
         }
@@ -188,7 +188,7 @@ class MultiplatformResourcesPlugin : Plugin<Project> {
         generatedDir: File,
         mrSettings: MRGenerator.MRSettings,
         features: List<ResourceGeneratorFeature<out MRGenerator.Generator>>,
-        sourceInfo: SourceInfo
+        sourceInfo: SourceInfo,
     ) {
         val androidExtension = target.extensions.getByType(BaseExtension::class)
 
@@ -198,7 +198,7 @@ class MultiplatformResourcesPlugin : Plugin<Project> {
             generatedDir = generatedDir,
             mrSettings = mrSettings,
             features = features,
-            project = target
+            project = target,
         )
 
         val androidMainSourceSet = androidExtension.sourceSets

@@ -23,47 +23,27 @@ publishing {
         pom {
             name.set("MOKO resources")
             description.set("Resources access for Kotlin Multiplatform development (mobile first)")
-            url.set("https://github.com/icerockdev/moko-resources")
+            url.set("https://github.com/rustamsmax/moko-resources")
             licenses {
                 license {
                     name.set("Apache-2.0")
                     distribution.set("repo")
-                    url.set("https://github.com/icerockdev/moko-resources/blob/master/LICENSE.md")
+                    url.set("https://github.com/rustamsmax/moko-resources/blob/master/LICENSE.md")
                 }
             }
 
             developers {
                 developer {
-                    id.set("Alex009")
-                    name.set("Aleksey Mikhailov")
-                    email.set("aleksey.mikhailov@icerockdev.com")
-                }
-                developer {
-                    id.set("Tetraquark")
-                    name.set("Vladislav Areshkin")
-                    email.set("vareshkin@icerockdev.com")
-                }
-                developer {
-                    id.set("ATchernov")
-                    name.set("Andrey Tchernov")
-                    email.set("tchernov@icerockdev.com")
-                }
-                developer {
-                    id.set("nrobi144")
-                    name.set("Nagy Robert")
-                    email.set("nagyrobi144@gmail.com")
-                }
-                developer {
-                    id.set("warnyul")
-                    name.set("Balázs Varga")
-                    email.set("balazs.varga@apter.tech")
+                    id.set("rsktash")
+                    name.set("Rustam Samandarov")
+                    email.set("rustamsmax@gmail.com")
                 }
             }
 
             scm {
-                connection.set("scm:git:ssh://github.com/icerockdev/moko-resources.git")
-                developerConnection.set("scm:git:ssh://github.com/icerockdev/moko-resources.git")
-                url.set("https://github.com/icerockdev/moko-resources")
+                connection.set("scm:git:ssh://github.com/rustamsmax/moko-resources.git")
+                developerConnection.set("scm:git:ssh://github.com/rustamsmax/moko-resources.git")
+                url.set("https://github.com/rustamsmax/moko-resources")
             }
         }
     }

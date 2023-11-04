@@ -24,6 +24,7 @@ import kotlin.reflect.full.functions
 class AndroidImagesGenerator(
     inputFileTree: FileTree,
     private val getAndroidRClassPackage: () -> String,
+    private val convertSvgToAndroidDrawables: Boolean,
     private val logger: Logger
 ) : ImagesGenerator(inputFileTree), ObjectBodyExtendable by NOPObjectBodyExtendable() {
     override fun getClassModifiers(): Array<KModifier> = arrayOf(KModifier.ACTUAL)
@@ -69,7 +70,7 @@ class AndroidImagesGenerator(
 
             val resourceExtension = if (file.svg) "xml" else file.extension
             val resourceFile = File(drawableDir, "$processedKey.$resourceExtension")
-            if (file.svg) {
+            if (file.svg && convertSvgToAndroidDrawables) {
                 parseSvgToVectorDrawable(file, resourceFile)
             } else {
                 file.copyTo(resourceFile)

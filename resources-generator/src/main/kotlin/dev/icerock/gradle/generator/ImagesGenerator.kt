@@ -100,7 +100,8 @@ abstract class ImagesGenerator(
     class Feature(
         private val info: SourceInfo,
         private val mrSettings: MRGenerator.MRSettings,
-        private val logger: Logger
+        private val logger: Logger,
+        private val convertSvgToAndroidDrawables: Boolean
     ) : ResourceGeneratorFeature<ImagesGenerator> {
         private val stringsFileTree = info.commonResources.matching {
             it.include("MR/images/**/*.png", "MR/images/**/*.jpg", "MR/images/**/*.svg")
@@ -114,7 +115,8 @@ abstract class ImagesGenerator(
         override fun createAndroidGenerator() = AndroidImagesGenerator(
             inputFileTree = stringsFileTree,
             getAndroidRClassPackage = requireNotNull(info.getAndroidRClassPackage),
-            logger = logger
+            convertSvgToAndroidDrawables = convertSvgToAndroidDrawables,
+            logger = logger,
         )
 
         override fun createJsGenerator(): ImagesGenerator = JsImagesGenerator(stringsFileTree)
